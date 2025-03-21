@@ -107,7 +107,6 @@ footer {
 }
 
 .ravintolat {
-  margin-top: 5%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -122,8 +121,16 @@ footer {
   box-shadow: 2px 2px 6px 0px rgba(0,0,0,3);
 }
 
-.haettu-ravintola-teskti {
+.haettu-ravintola-teksti {
   padding: 0 20px 20px;
+}
+
+.suosikki-ravintola {
+  width: 800px;
+  height: 400px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,3);
 }
 
 
