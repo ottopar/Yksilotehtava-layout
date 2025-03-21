@@ -20,6 +20,13 @@
   margin-right: 2em;
 }
 
+.main-nav li a {
+  color: #F2F3F4;
+  text-decoration: none;
+} .main-nav li a:hover {
+  color: #ccc;
+}
+
 .main-nav #logo {
   display: inline-block;
   margin-right: auto;
@@ -66,4 +73,54 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+.search-ravintolat {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 2em;
+  background-color: #F2F3F4;
+  border-radius: 8px;
+}
+
+.hakukentta {
+  padding: 1rem;
+  border: 0;
+  border-radius: inherit;
+  flex-grow: 1;
+  font-size: 1rem;
+
+}
+
+.hakunappi {
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  color: white;
+  background-color: #E34234;
+  border-radius: inherit;
+  font-size: 1rem;
+  width: max-content;
+  flex-shrink: 0;
+}
+
+.ravintolat {
+  margin-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+
+.haettu-ravintola {
+  width: 400px;
+  height: 400px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,3);
+}
+
+
 
