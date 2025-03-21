@@ -42,26 +42,56 @@ sisennykset ja rivitykset
 <!-- Etusivulla näytetään lähin ravintola gps perusteella, päivän ruoka, kartta ravintolasta (Tästä voi myös
 löytää muita ravintoloita), lisää suosikkeihin-->
 <!-- Opiskelijaravintolat sivulla listataan kaikki ravintolat ja tätä hakua voi filtteröidä.-->
- <!-- Tietoa sivustosta sivulla näkyy mikä on sivuston tarkoitus ja muuta-->
+ <!-- Suosikit löytyy suosikki ravintolat-->
+<header>
 <nav class="main-nav">
   <ul>
     <Li id="logo">Logo</Li>
     <li>Etusivu</li>
     <li>Opiskelijaravintolat</li>
-    <li>Tietoa sivustosta</li>
+    <li>Suosikit</li>
     <li id="login">Kirjaudu sisään</li>
   </ul>
 </nav>
+</header>
 
-<div class="sisalto">
+<main class="sisalto">
 <!-- Tänne etusivun sisalto. Voisi olla vaikka zigzag tyyppinen. Eli Vasemmalla ylhäällä näkyy lähin ravintola
- gps perusteella (Nimi ja sen tiedot), sen vieressä oikealla näkyy päivän ruoka, alhaalla vasemmalla näkyy
- lisää suosikkeihin sen lähimmän ravintolan kohdalla, oikealla alhaalla näkyy kartta. Muita juttuja myöhemmin, näitten
- layout nyt ainaskin-->
-
-
-
-</div>
+gps perusteella (Nimi ja sen tiedot), sen vieressä oikealla näkyy päivän ruoka, alhaalla vasemmalla näkyy
+lisää suosikkeihin sen lähimmän ravintolan kohdalla, oikealla alhaalla näkyy kartta. Muita juttuja myöhemmin, näitten
+layout nyt ainaskin-->
+  <article class="kortti">
+    <img src="../KUVAT/ah-unicafe-kaivopiha-05-1024x683.jpg" alt="Väliaikainen kuva">
+    <div class="text">
+      <h3>Lähin ravintola (jos ei ole sijainti päällä, joku default ravintola tähän
+        tai jokin ilmoitus, että ei löytynyt lähintä ja ohjeistetaan hakemaan ravintoloita
+        manuaalisesti)</h3>
+      <p>Jotain tietoa ravintolasta (Aukioloajat, osoite jne)</p>
+      <button id="week-menu-button">Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)</button>
+      <button id="favorite-button">Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit sivulta)</button>
+    </div>
+  </article>
+  <article class="kortti">
+    <div class="text">
+      <h3>Päivän ruokalista</h3>
+      <p>Tähän päivän ruokalista tiedot lähimmästä ravintolasta
+        (Vasemmalla olevasta)
+      </p>
+    </div>
+  </article>
+  <article class="kortti">
+    <img src="../KUVAT/PlaceholderMap.png" alt="Väliaikainen kuva">
+    <div class="kartta">
+      <h3>Ravintolat kartalla (Placeholder kuva)</h3>
+      <p>Tähän tulee kartta, jossa näkyy ravintolat
+        ja niitä voi painaa kartalla ja saada perus
+        tietoa niistä. Joku leaflet tai mitä tällä
+        kurssila käytetäänkään. Zoomaa aina alussa lähimpään ravintolaan.
+      </p>
+    </div>
+  </article>
+</main>
+<footer>@ All Rights Reserved </footer>
 
 </body>
 

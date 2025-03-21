@@ -30,3 +30,40 @@
   margin-left: auto;
   margin-right: 0;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+.sisalto {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.kortti {
+  width: 700px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px 6px 0px rgba(0,0,0,3);
+}
+
+.kortti img {
+  max-width: 100%;
+}
+
+.kortti .text, .kartta{
+  padding: 0 20px 20px;
+}
+
+footer {
+  background-color: #D2042D;
+  height: 10em;
+  padding: 1em;
+  color: #F2F3F4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
