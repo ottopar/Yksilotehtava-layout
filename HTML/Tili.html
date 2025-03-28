@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opiskelijaravintolat</title>
+    <link rel="stylesheet" href="../CSS/sources.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li id="logo"><a href="Etusivu.html">Etusivu</a></li>
+          <li><a href="Opiskelijaravintolat.html">Opiskelijaravintolat</a></li>
+          <li><a href="Suosikit.html">Suosikit</a></li>
+          <li><a href="Tili.html">Käyttäjätili</a></li>
+          <li id="login"><a href="Login.html">Kirjaudu sisään</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Kokeillaan tehdä tauluna eikä flexboxina, koska helppo ja simppeli
+         Salasanan, käyttäjänimen ja sähköpostin vaihto vaativat sähköposti varmistuksen tai jtn-->
+
+    <main class="userAccount-page">
+      <h1>
+        Haetaan javascriptillä, mutta tässä placeholder, jotta näkee ulkoasun
+      </h1>
+      <table class="userInfo">
+        <tr>
+          <th colspan="3" style="text-align: center">
+            <img
+              src="../KUVAT/5036407.png"
+              alt="profiilikuva"
+              class="profile-pic"
+            /><br />
+            <button class="edit-btn">Muuta profiilikuvaa</button>
+          </th>
+        </tr>
+        <tr>
+          <th>Käyttäjänimi</th>
+          <td id="username">Heikki532</td>
+          <td><button class="edit-btn">Muuta käyttäjänimeä</button></td>
+        </tr>
+        <tr>
+          <th>Sähköposti</th>
+          <td id="email">heikki532@gmail.com</td>
+          <td><button class="edit-btn">Muuta sähköpostia</button></td>
+        </tr>
+        <tr>
+          <!-- salasanaa ei näytetä-->
+          <th>Salasana</th>
+          <td id>********</td>
+          <td><button class="edit-btn">Muuta salasanaa</button></td>
+        </tr>
+      </table>
+    </main>
+    <footer>@ All Rights Reserved</footer>
+  </body>
+</html>

@@ -1,96 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Opiskelijaravintolat</title>
-  <link rel="stylesheet" href="../CSS/sources.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opiskelijaravintolat</title>
+    <link rel="stylesheet" href="../CSS/sources.css" />
+  </head>
 
-<body>
+  <body>
+    <!-- Opiskelijaravintolat sivulla listataan kaikki ravintolat ja tätä hakua voi filtteröidä.-->
+    <header>
+      <nav class="main-nav">
+        <ul>
+          <li id="logo"><a href="Etusivu.html">Etusivu</a></li>
+          <li><a href="Opiskelijaravintolat.html">Opiskelijaravintolat</a></li>
+          <li><a href="Suosikit.html">Suosikit</a></li>
+          <li><a href="Tili.html">Käyttäjätili</a></li>
+          <li id="login"><a href="Login.html">Kirjaudu sisään</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<!-- Opiskelijaravintolat sivulla listataan kaikki ravintolat ja tätä hakua voi filtteröidä.-->
-<header>
-<nav class="main-nav">
-  <ul>
-    <Li id="logo">Logo</Li>
-    <li><a href="Etusivu.html">Etusivu</a></li>
-    <li><a href="Opiskelijaravintolat.html">Opiskelijaravintolat</a></li>
-    <li><a href="Suosikit.html">Suosikit</a></li>
-    <li id="login"><a href="Login.html">Kirjaudu sisään</a></li>
-  </ul>
-</nav>
-</header>
-
-<!-- näille toiminnoille javascript. Lisätään myös näkyviin valitut kaupungit sillein siististi
+    <!-- näille toiminnoille javascript. Lisätään myös näkyviin valitut kaupungit sillein siististi
  siihe johonkin alle.-->
-<div class="search-ravintolat">
-  <form>
-    <input class="hakukentta" type="search" name="search" placeholder="Hae ravintoloita...">
-    <button class="hakunappi" type="submit">Etsi</button>
-  </form>
-  <form>
-    <input class="hakukentta" id="rajaakentta" type="search" name="search" placeholder="Rajaa kaupunkeja...">
-    <button class="hakunappi" id="rajaanappi" type="submit">Rajaa</button>
-  </form>
-</div>
+    <div class="search-ravintolat">
+      <form>
+        <input
+          class="hakukentta"
+          type="search"
+          name="search"
+          placeholder="Hae ravintoloita..."
+        />
+        <button class="hakunappi" type="submit">Etsi</button>
+      </form>
+      <form>
+        <input
+          class="hakukentta"
+          id="rajaakentta"
+          type="search"
+          name="search"
+          placeholder="Rajaa kaupunkeja..."
+        />
+        <button class="hakunappi" id="rajaanappi" type="submit">Rajaa</button>
+      </form>
+    </div>
 
-<!-- Tähän aattelin, että listataan kaikki ravintolat. Voi filtteröidä kaupungit mistä haetaan ravintoloita (haku
+    <!-- Tähän aattelin, että listataan kaikki ravintolat. Voi filtteröidä kaupungit mistä haetaan ravintoloita (haku
  kenttä) ja sitten on hakukenttä erikseen ravintoloille. Ravintolat listataan aakkosjärjestyksessä-->
-<main class="ravintolat">
-  <div class="haettu-ravintola">Ravintola 1 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt placeholder)
-    <div class="haettu-ravintola-teksti">
-      <h3>Ravintolan nimi</h3>
-      <p>Tiedot</p>
-      <button class="week-menu-button">Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)</button>
-      <button class="favorite-button">Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit sivulta)</button>
-    </div>
-  </div>
-  <div class="haettu-ravintola">Ravintola 2 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt placeholder)
-    <div class="haettu-ravintola-teksti">
-      <h3>Ravintolan nimi</h3>
-      <p>Tiedot</p>
-      <button class="week-menu-button">Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)</button>
-      <button class="favorite-button">Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit sivulta)</button>
-    </div>
-  </div>
-  <div class="haettu-ravintola">Ravintola 3 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt placeholder)
-    <div class="haettu-ravintola-teksti">
-      <h3>Ravintolan nimi</h3>
-      <p>Tiedot</p>
-      <button class="week-menu-button">Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)</button>
-      <button class="favorite-button">Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit sivulta)</button>
-    </div>
-  </div>
-  <div class="haettu-ravintola">Ravintola 4 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt placeholder)
-    <div class="haettu-ravintola-teksti">
-      <h3>Ravintolan nimi</h3>
-      <p>Tiedot</p>
-      <button class="week-menu-button">Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)</button>
-      <button class="favorite-button">Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit sivulta)</button>
-    </div>
-  </div>
-  <div class="haettu-ravintola">Ravintola 5 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt placeholder)
-    <div class="haettu-ravintola-teksti">
-      <h3>Ravintolan nimi</h3>
-      <p>Tiedot</p>
-      <button class="week-menu-button">Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)</button>
-      <button class="favorite-button">Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit sivulta)</button>
-    </div>
-  </div>
-  <div class="haettu-ravintola">Ravintola 6 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt placeholder)
-    <div class="haettu-ravintola-teksti">
-      <h3>Ravintolan nimi</h3>
-      <p>Tiedot</p>
-      <button class="week-menu-button">Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)</button>
-      <button class="favorite-button">Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit sivulta)</button>
-    </div>
-  </div>
-
-</main>
-<footer>@ All Rights Reserved </footer>
-
-</body>
-
+    <main class="ravintolat">
+      <div class="haettu-ravintola">
+        Ravintola 1 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt
+        placeholder)
+        <div class="haettu-ravintola-teksti">
+          <h3>Ravintolan nimi</h3>
+          <p>Tiedot</p>
+          <button class="week-menu-button" popovertarget="viikon-ruokalista">
+            Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)
+          </button>
+          <button class="favorite-button">
+            Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit
+            sivulta)
+          </button>
+        </div>
+      </div>
+      <div class="haettu-ravintola">
+        Ravintola 2 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt
+        placeholder)
+        <div class="haettu-ravintola-teksti">
+          <h3>Ravintolan nimi</h3>
+          <p>Tiedot</p>
+          <button class="week-menu-button" popovertarget="viikon-ruokalista">
+            Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)
+          </button>
+          <button class="favorite-button">
+            Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit
+            sivulta)
+          </button>
+        </div>
+      </div>
+      <div class="haettu-ravintola">
+        Ravintola 3 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt
+        placeholder)
+        <div class="haettu-ravintola-teksti">
+          <h3>Ravintolan nimi</h3>
+          <p>Tiedot</p>
+          <button class="week-menu-button" popovertarget="viikon-ruokalista">
+            Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)
+          </button>
+          <button class="favorite-button">
+            Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit
+            sivulta)
+          </button>
+        </div>
+      </div>
+      <div class="haettu-ravintola">
+        Ravintola 4 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt
+        placeholder)
+        <div class="haettu-ravintola-teksti">
+          <h3>Ravintolan nimi</h3>
+          <p>Tiedot</p>
+          <button class="week-menu-button" popovertarget="viikon-ruokalista">
+            Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)
+          </button>
+          <button class="favorite-button">
+            Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit
+            sivulta)
+          </button>
+        </div>
+      </div>
+      <div class="haettu-ravintola">
+        Ravintola 5 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt
+        placeholder)
+        <div class="haettu-ravintola-teksti">
+          <h3>Ravintolan nimi</h3>
+          <p>Tiedot</p>
+          <button class="week-menu-button" popovertarget="viikon-ruokalista">
+            Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)
+          </button>
+          <button class="favorite-button">
+            Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit
+            sivulta)
+          </button>
+        </div>
+      </div>
+      <div class="haettu-ravintola">
+        Ravintola 6 (Nämä haetaan JavaScriptillä sitten myöhemmin, nyt
+        placeholder)
+        <div class="haettu-ravintola-teksti">
+          <h3>Ravintolan nimi</h3>
+          <p>Tiedot</p>
+          <button class="week-menu-button" popovertarget="viikon-ruokalista">
+            Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)
+          </button>
+          <button class="favorite-button">
+            Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit
+            sivulta)
+          </button>
+        </div>
+      </div>
+      <div id="viikon-ruokalista" popover>
+        <p>Tähän ruokalista</p>
+        <button
+          class="hide"
+          popovertarget="viikon-ruokalista"
+          popovertargetaction="hide"
+        >
+          X
+        </button>
+      </div>
+    </main>
+    <footer>@ All Rights Reserved</footer>
+  </body>
 </html>

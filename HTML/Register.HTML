@@ -22,26 +22,31 @@
     </header>
 
     <main class="login-page">
-      <div class="login-div">
+      <div class="register-div">
         <form action="">
-          <h1>Kirjaudu sisään</h1>
+          <h1>Rekisteröidy</h1>
+          <div class="input-box">
+            <input type="email" placeholder="Sähköposti" required />
+          </div>
           <div class="input-box">
             <input type="text" placeholder="Käyttäjänimi" required />
           </div>
           <div class="input-box">
             <input type="password" placeholder="Salasana" required />
           </div>
-
-          <div class="remember-forgot">
-            <label><input type="checkbox" /> Muista minut</label>
-            <a href="ForgottenPassword.html">Salasana unohtui?</a>
+          <div class="input-box">
+            <input
+              type="password"
+              placeholder="Syötä salasana uudelleen..."
+              required
+            />
           </div>
 
-          <button type="submit" class="btn">Kirjaudu sisään</button>
-
-          <div class="register-link">
+          <button type="submit" class="btn">Rekisteröidy</button>
+          <div class="login-link">
             <p>
-              Eikö ole käyttäjätiliä? <a href="Register.HTML">Rekisteröidy</a>
+              Onko olemassaoleva käyttäjätili?
+              <a href="Login.html">Kirjaudu sisään</a>
             </p>
           </div>
         </form>
