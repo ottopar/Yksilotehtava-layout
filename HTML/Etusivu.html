@@ -1,33 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-  <!-- Tehtävässä on tehtävänä rakentaa toimiva web-sovellus
-Aihe: Sovellus, joka näyttää suomen opiskelijaravintolat ja niiden päivittäiset ja viikoittaiset ruokalistat. Tehtävässä käytetään samaa REST APIa, kuin tunneilla.
-Minimisisältö (arvosana 1):
-Ravintolat ovat listattu jotenkin ja käyttäjä voi valita haluaako nähdä päivän tai viikon ruokalistan ja ko. ruokalistat näytetään. Julkaistu users.metropolia.fi palvelimella (tai muulla julkisella palvelimella)
-Lähdekoodi GitHubissa (tai vastaavassa palvelussa)
-Hyvät Git käytänteet
-Arvosana > 2 (koko listausta ei tarvitse toteuttaa):
-Minimivaatimukset
-Asiakkaan kirjautuminen/rekisteröityminen
-Asiakas voi valita suosikkiravintolan
-Asiakas voi päivittää omia tietojaan
-Asiakas voi lisätä profiilikuvan
-Ravintolat voi filtteröidä esim. kaupungin, palveluntarjoajan ym. mukaan
-Ravintolat ovat listattu selkeästi ja loogisesti
-Ravintolat ovat kartalla
-Lähin ravintola on korostettu
-Vapaavalintaisia toiminnallisuuksia
-
-Tekniset vaatimukset:
-front-end-sovelluslogiikka toteutettava “vanilla” JavaScriptillä
-ES6+ ominaisuuksien ja JS-harjoitusten käytäntöjen hyödyntäminen suotavaa
-Angular/React/JQuery/tms. front-end sovelluskehysten tai kirjastojen käyttö kielletty
-CSS Frameworkien käyttö, kuten Bootstrap, on kielletty.
-hyvien ohjelmointikäytäntöjen noudattaminen
-loogiset nimeämiskäytännöt
-sisennykset ja rivitykset
--->
-
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,10 +15,6 @@ sisennykset ja rivitykset
   </head>
 
   <body>
-    <!-- Etusivulla näytetään lähin ravintola gps perusteella, päivän ruoka, kartta ravintolasta (Tästä voi myös
-löytää muita ravintoloita), lisää suosikkeihin-->
-    <!-- Opiskelijaravintolat sivulla listataan kaikki ravintolat ja tätä hakua voi filtteröidä.-->
-    <!-- Suosikit löytyy suosikki ravintolat-->
     <header>
       <nav class="main-nav">
         <ul>
@@ -60,10 +28,6 @@ löytää muita ravintoloita), lisää suosikkeihin-->
     </header>
 
     <main class="sisalto">
-      <!-- Tänne etusivun sisalto. Voisi olla vaikka zigzag tyyppinen. Eli Vasemmalla ylhäällä näkyy lähin ravintola
-gps perusteella (Nimi ja sen tiedot), sen vieressä oikealla näkyy päivän ruoka, alhaalla vasemmalla näkyy
-lisää suosikkeihin sen lähimmän ravintolan kohdalla, oikealla alhaalla näkyy kartta. Muita juttuja myöhemmin, näitten
-layout nyt ainaskin-->
       <article class="kortti" id="closestRestaurant">
         <img
           src="../KUVAT/ah-unicafe-kaivopiha-05-1024x683.jpg"
@@ -105,6 +69,7 @@ layout nyt ainaskin-->
         </div>
       </article>
       <article class="kortti">
+        <!-- kartta ei lataudu puhelimella, selvitä syy ja korjaa-->
         <div id="map"></div>
         <div class="text">
           <h3>Ravintolat kartalla (Placeholder kuva)</h3>
