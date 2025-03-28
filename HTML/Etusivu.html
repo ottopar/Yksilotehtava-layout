@@ -34,6 +34,12 @@ sisennykset ja rivitykset
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opiskelijaravintolat</title>
     <link rel="stylesheet" href="../CSS/sources.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script type="module" src="../JS/Main.js" defer></script>
   </head>
 
   <body>
@@ -58,7 +64,7 @@ löytää muita ravintoloita), lisää suosikkeihin-->
 gps perusteella (Nimi ja sen tiedot), sen vieressä oikealla näkyy päivän ruoka, alhaalla vasemmalla näkyy
 lisää suosikkeihin sen lähimmän ravintolan kohdalla, oikealla alhaalla näkyy kartta. Muita juttuja myöhemmin, näitten
 layout nyt ainaskin-->
-      <article class="kortti">
+      <article class="kortti" id="closestRestaurant">
         <img
           src="../KUVAT/ah-unicafe-kaivopiha-05-1024x683.jpg"
           alt="Väliaikainen kuva"
@@ -99,8 +105,8 @@ layout nyt ainaskin-->
         </div>
       </article>
       <article class="kortti">
-        <img src="../KUVAT/PlaceholderMap.png" alt="Väliaikainen kuva" />
-        <div class="kartta">
+        <div id="map"></div>
+        <div class="text">
           <h3>Ravintolat kartalla (Placeholder kuva)</h3>
           <p>
             Tähän tulee kartta, jossa näkyy ravintolat ja niitä voi painaa
