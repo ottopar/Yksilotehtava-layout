@@ -11,7 +11,7 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
-    <script type="module" src="../JS/Main.js" defer></script>
+    <script type="module" src="../JS/pages/etusivu.js"></script>
   </head>
 
   <body>
@@ -34,25 +34,20 @@
           alt="Väliaikainen kuva"
         />
         <div class="text">
-          <h3>
-            Lähin ravintola (jos ei ole sijainti päällä, joku default ravintola
-            tähän tai jokin ilmoitus, että ei löytynyt lähintä ja ohjeistetaan
-            hakemaan ravintoloita manuaalisesti)
-          </h3>
-          <p>Jotain tietoa ravintolasta (Aukioloajat, osoite jne)</p>
-          <button class="week-menu-button" popovertarget="viikon-ruokalista">
-            Katso viikon ruokalista (Joku popover ikkuna josta voi katsoa)
-          </button>
-          <div id="viikon-ruokalista" popover>
-            <p>Tähän ruokalista</p>
-            <button
-              class="hide"
-              popovertarget="viikon-ruokalista"
-              popovertargetaction="hide"
-            >
-              X
-            </button>
-          </div>
+          <h3>Haetaan lähintä ravintolaa...</h3>
+          <p>Haetaan lähimmän ravnitolan tietoja...</p>
+          <button class="week-menu-button">Katso viikon ruokalista</button>
+          <dialog id="viikon-ruokalista" class="menu-dialog">
+            <div class="menu-modal-content">
+              <h2>Viikon ruokalista</h2>
+              <div class="menu-content">
+                <p>Ladataan menua...</p>
+              </div>
+              <button class="close-menu-modal" aria-label="Close menu">
+                ×
+              </button>
+            </div>
+          </dialog>
           <button class="favorite-button">
             Lisää suosikkeihin (Lisää suosikkeihin ja nämä löytyy suosikit
             sivulta)
