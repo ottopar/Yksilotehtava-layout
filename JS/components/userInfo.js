@@ -1,5 +1,5 @@
 import { getLoggedInUser, logoutUser } from "../utils/userService.js";
-import { updateUser } from "../utils/updateUserservice.js";
+import { updateUser } from "../utils/updateUserService.js";
 import { uploadAvatar } from "../utils/uploadAvatarService.js";
 import { deleteUser } from "../utils/deleteUserService.js";
 
