@@ -1,4 +1,5 @@
 import { getRestaurants } from "./restaurantService.js";
+import { createFavoriteButton } from "../components/favoriteButton.js";
 
 export const addRestaurantMarkers = (map) => {
   const restaurants = getRestaurants();
@@ -6,9 +7,10 @@ export const addRestaurantMarkers = (map) => {
     const [longitude, latitude] = restaurant.location.coordinates;
     const marker = L.marker([latitude, longitude]).addTo(map);
 
-    const popupContent = `
+    const popupContent = document.createElement("div");
+    popupContent.className = "popup-content";
 
-    <div class="popup-content">
+    popupContent.innerHTML = `
       <h3>${restaurant.name}</h3>
       <p>${restaurant.address}</p>
       <p>Distance: ${
@@ -17,10 +19,17 @@ export const addRestaurantMarkers = (map) => {
       <button onclick="window.showRestaurantMenu('${
         restaurant._id
       }')" class="popup-button">
-          Show Menu
-        </button>
-    </div>
+        Katso viikon ruokalista
+      </button>
     `;
+
+    const favoriteButton = createFavoriteButton(restaurant);
+    popupContent.appendChild(favoriteButton);
+
+    // Event listenerit pois ku suljetaan
+    marker.on("popupclose", () => {
+      favoriteButton.unsubscribe?.();
+    });
 
     marker.bindPopup(popupContent);
   });
