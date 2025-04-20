@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Opiskelijaravintolat</title>
     <link rel="stylesheet" href="../CSS/sources.css" />
+    <script type="module" src="../JS/pages/tili.js"></script>
   </head>
 
   <body>
@@ -20,42 +21,49 @@
         </ul>
       </nav>
     </header>
-
-    <!-- Kokeillaan tehdä tauluna eikä flexboxina, koska helppo ja simppeli
-         Salasanan, käyttäjänimen ja sähköpostin vaihto vaativat sähköposti varmistuksen tai jtn-->
-
-    <!-- taulukko ei näy kunnolla puhelimella, selvitä syy ja korjaa-->
-
     <main class="userAccount-page">
-      <h1>
-        Haetaan javascriptillä, mutta tässä placeholder, jotta näkee ulkoasun
-      </h1>
       <table class="userInfo">
         <tr>
           <th colspan="3" style="text-align: center">
-            <img
-              src="../KUVAT/5036407.png"
-              alt="profiilikuva"
-              class="profile-pic"
-            /><br />
-            <button class="edit-btn">Muuta profiilikuvaa</button>
+            <img id="avatar" alt="profiilikuva" class="profile-pic" /><br />
+            <input
+              type="file"
+              id="avatarInput"
+              accept="image/*"
+              style="display: none"
+            />
+            <button id="upload-avatar-btn" class="edit-btn">
+              Muuta profiilikuvaa
+            </button>
           </th>
         </tr>
         <tr>
           <th>Käyttäjänimi</th>
-          <td id="username">Heikki532</td>
+          <td id="username"></td>
           <td><button class="edit-btn">Muuta käyttäjänimeä</button></td>
         </tr>
         <tr>
           <th>Sähköposti</th>
-          <td id="email">heikki532@gmail.com</td>
+          <td id="email"></td>
           <td><button class="edit-btn">Muuta sähköpostia</button></td>
         </tr>
         <tr>
           <!-- salasanaa ei näytetä-->
           <th>Salasana</th>
-          <td id>********</td>
+          <td id="password"></td>
           <td><button class="edit-btn">Muuta salasanaa</button></td>
+        </tr>
+        <tr>
+          <td colspan="3" style="text-align: center">
+            <button id="logout-btn" class="btn1">Kirjaudu ulos</button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3" style="text-align: center">
+            <button id="delete-account-btn" class="btn1 danger">
+              Poista käyttäjätili
+            </button>
+          </td>
         </tr>
       </table>
     </main>
