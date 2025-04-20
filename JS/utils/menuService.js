@@ -1,10 +1,10 @@
 import { apiUrl } from "./variables.js";
 import { fetchData } from "../api/fetchData.js";
 
-const formatPrice = (priceString) => {
-  if (!priceString) return "Price not available";
-  return priceString.split(" / ").join("<br>");
-};
+const formatPrice = (priceString) =>
+  priceString
+    ? priceString.split(" / ").join("<br>")
+    : "Hinta ei ole saatavilla";
 
 export const getDailyMenu = async (restaurantId, lang = "fi") => {
   try {
@@ -13,7 +13,7 @@ export const getDailyMenu = async (restaurantId, lang = "fi") => {
     );
   } catch (error) {
     console.error(error);
-    return { courses: [] }; // Return an empty array if there's an error
+    return { courses: [] }; // Tyhjä array jos erroria
   }
 };
 
@@ -22,17 +22,16 @@ export const getWeeklyMenu = async (restaurantId, lang = "fi") => {
     const menu = await fetchData(
       `${apiUrl}/restaurants/weekly/${restaurantId}/${lang}`
     );
-    console.log(menu);
     return menu;
   } catch (error) {
     console.error(error);
-    return { courses: [] }; // Return an empty array if there's an error
+    return { courses: [] };
   }
 };
 
 export const createMenuHtml = (courses) => {
-  if (!courses || !courses.length) {
-    return '<p class="error-message">Menu not available at the moment.</p>';
+  if (!courses?.length) {
+    return '<p class="error-message">Menu ei ole saatavilla tällä hetkellä.</p>';
   }
 
   return courses.reduce(
@@ -56,15 +55,14 @@ export const createMenuHtml = (courses) => {
 };
 
 export const createWeeklyMenuHtml = (weeklyMenu) => {
-  if (!weeklyMenu?.days || !weeklyMenu.days.length) {
-    return '<p class="error-message">Weekly menu not available at the moment.</p>';
+  if (!weeklyMenu?.days?.length) {
+    return '<p class="error-message">Menu ei ole saatavilla tällä hetkellä.</p>';
   }
 
   const tabButtons = weeklyMenu.days
     .map(
       (day, index) => `
-      <button class="menu-tab-button ${index === 0 ? "active" : ""}"
-              data-day="${index}">
+      <button class="menu-tab-button" data-day="${index}">
         ${day.date.split(" ")[0]}
       </button>
     `
@@ -74,9 +72,7 @@ export const createWeeklyMenuHtml = (weeklyMenu) => {
   const menuContent = weeklyMenu.days
     .map(
       (day, index) => `
-      <div class="menu-day-content ${
-        index === 0 ? "active" : ""
-      }" data-day="${index}">
+      <div class="menu-day-content" data-day="${index}">
         <h3 class="menu-day-title">${day.date}</h3>
         ${createMenuHtml(day.courses || [])}
       </div>

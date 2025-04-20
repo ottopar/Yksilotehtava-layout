@@ -7,7 +7,6 @@ let restaurants = [];
 export const fetchRestaurants = async () => {
   try {
     restaurants = await fetchData(`${apiUrl}/restaurants`);
-    console.log(restaurants);
   } catch (error) {
     console.error(error);
   }
@@ -25,14 +24,9 @@ export const sortRestaurantsByDistance = (lat, lon) => {
   restaurants.sort((a, b) => a.distance - b.distance);
 };
 
-export const getClosestRestaurant = () => {
-  return restaurants.length ? restaurants[0] : null;
-};
+export const getClosestRestaurant = () => restaurants[0] || null;
 
-export const getRestaurants = () => {
-  return restaurants;
-};
+export const getRestaurants = () => restaurants;
 
-export const getRestaurantById = (id) => {
-  return restaurants.find((restaurant) => restaurant._id === id);
-};
+export const getRestaurantById = (id) =>
+  restaurants.find((restaurant) => restaurant._id === id);
