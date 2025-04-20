@@ -15,26 +15,30 @@ export const showRestaurantMenu = async (restaurantId) => {
     const menuHtml = createWeeklyMenuHtml(weeklyMenuData);
     const modalHtml = createMenuModal(restaurant, menuHtml);
 
-    // Remove any existing modals first
-    document
-      .querySelectorAll(".menu-modal-overlay")
-      .forEach((el) => el.remove());
+    // Poista olemassa olevat jotta yksi näkyy kerrallaan
+    const existingModal = document.querySelector(".menu-modal-overlay");
+    if (existingModal) {
+      existingModal.remove();
+    }
 
     const modalContainer = document.createElement("div");
     modalContainer.classList.add("menu-modal-overlay");
     modalContainer.innerHTML = modalHtml;
     document.body.appendChild(modalContainer);
 
-    // Close modal on click
-    modalContainer
-      .querySelector(".close-menu-modal")
-      .addEventListener("click", () => modalContainer.remove());
+    // Sulje modal paianessa nappia, esciä tai pois modalista
+    const closeBtn = modalContainer.querySelector(".close-menu-modal");
+    closeBtn?.addEventListener("click", () => modalContainer.remove());
 
-    // Close modal on ESC key
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") modalContainer.remove();
-    });
+    const handleEscapeKey = (e) => {
+      if (e.key === "Escape") {
+        modalContainer.remove();
+        document.removeEventListener("keydown", handleEscapeKey);
+      }
+    };
+    document.addEventListener("keydown", handleEscapeKey);
   } catch (err) {
     console.error("Error displaying restaurant menu:", err);
+    alert("Etsittäessä ruokalistaa tapahtui virhe.");
   }
 };
